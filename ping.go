@@ -109,6 +109,10 @@ func (s *PingService) Do() (*PingResult, int, error) {
 		req.SetBasicAuth(basicAuthUsername, basicAuthPassword)
 	}
 
+	if s.client.signer != nil {
+		s.client.signer((*http.Request)(req))
+	}
+
 	res, err := s.client.c.Do((*http.Request)(req))
 	if err != nil {
 		return nil, 0, err
