@@ -4,7 +4,7 @@ Elastic is an [Elasticsearch](http://www.elasticsearch.org/) client for the
 [Go](http://www.golang.org/) programming language.
 
 [![Build Status](https://travis-ci.org/olivere/elastic.svg?branch=release-branch.v3)](https://travis-ci.org/olivere/elastic)
-[![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/gopkg.in/olivere/elastic.v2)
+[![Godoc](http://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/segmentio/elastic)
 [![license](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/olivere/elastic/master/LICENSE)
 
 See the [wiki](https://github.com/olivere/elastic/wiki) for additional information about Elastic.
@@ -19,7 +19,7 @@ Here's the version matrix:
 Elasticsearch version | Elastic version -| Package URL
 ----------------------|------------------|------------
 2.x                   | 3.0              | [`gopkg.in/olivere/elastic.v3`](https://gopkg.in/olivere/elastic.v3) ([source](https://github.com/olivere/elastic/tree/release-branch.v3) [doc](http://godoc.org/gopkg.in/olivere/elastic.v3))
-1.x                   | 2.0              | [`gopkg.in/olivere/elastic.v2`](https://gopkg.in/olivere/elastic.v2) ([source](https://github.com/olivere/elastic/tree/release-branch.v2) [doc](http://godoc.org/gopkg.in/olivere/elastic.v2))
+1.x                   | 2.0              | [`github.com/segmentio/elastic`](https://github.com/segmentio/elastic) ([source](https://github.com/olivere/elastic/tree/release-branch.v2) [doc](http://godoc.org/github.com/segmentio/elastic))
 0.9-1.3               | 1.0              | [`gopkg.in/olivere/elastic.v1`](https://gopkg.in/olivere/elastic.v1) ([source](https://github.com/olivere/elastic/tree/release-branch.v1) [doc](http://godoc.org/gopkg.in/olivere/elastic.v1))
 
 **Example:**
@@ -27,13 +27,13 @@ Elasticsearch version | Elastic version -| Package URL
 You have installed Elasticsearch 1.7.4 and want to use Elastic. As listed above, you should use Elastic 2.0. So you first install the stable release of Elastic 2.0 from gopkg.in.
 
 ```sh
-$ go get gopkg.in/olivere/elastic.v2
+$ go get github.com/segmentio/elastic
 ```
 
 You then import it with this import path:
 
 ```go
-import "gopkg.in/olivere/elastic.v2"
+import "github.com/segmentio/elastic"
 ```
 
 
@@ -45,7 +45,7 @@ Notice that there are a lot of [breaking changes in Elasticsearch 2.0](https://w
 
 ### Elastic 2.0
 
-Elastic 2.0 targets Elasticsearch 1.x and published via [`gopkg.in/olivere/elastic.v2`](https://gopkg.in/olivere/elastic.v2).
+Elastic 2.0 targets Elasticsearch 1.x and published via [`github.com/segmentio/elastic`](https://github.com/segmentio/elastic).
 
 ### Elastic 1.0
 

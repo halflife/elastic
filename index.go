@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"net/url"
 
-	"gopkg.in/olivere/elastic.v2/uritemplates"
+	"github.com/segmentio/elastic/uritemplates"
 )
 
 // IndexResult is the result of indexing a document in Elasticsearch.

@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"strings"
 
-	"gopkg.in/olivere/elastic.v2/uritemplates"
+	"github.com/segmentio/elastic/uritemplates"
 )
 
 // ClusterStateService returns the state of the cluster.

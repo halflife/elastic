@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"strings"
 
-	"gopkg.in/olivere/elastic.v2/uritemplates"
+	"github.com/segmentio/elastic/uritemplates"
 )
 
 // IndicesGetWarmerService allows to get the definition of a warmer for a

@@ -4,7 +4,7 @@
 
 package elastic
 
-import "gopkg.in/olivere/elastic.v2/uritemplates"
+import "github.com/segmentio/elastic/uritemplates"
 
 type DeleteIndexService struct {
 	client *Client
