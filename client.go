@@ -102,7 +102,8 @@ type ClientOptionFunc func(*Client) error
 
 // Client is an Elasticsearch client. Create one by calling NewClient.
 type Client struct {
-	c *http.Client // net/http Client to use for requests
+	c      *http.Client // net/http Client to use for requests
+	signer func(*http.Request)
 
 	connsMu sync.RWMutex // connsMu guards the next block
 	conns   []*conn      // all connections
@@ -332,6 +333,15 @@ func SetHttpClient(httpClient *http.Client) ClientOptionFunc {
 		} else {
 			c.c = http.DefaultClient
 		}
+		return nil
+	}
+}
+
+// SetHttpRequestSigner can be used to specify a signer function
+// for your HTTP requests to Elasticsearch.
+func SetHttpRequestSigner(signer func(*http.Request)) ClientOptionFunc {
+	return func(c *Client) error {
+		c.signer = signer
 		return nil
 	}
 }
@@ -1058,6 +1068,11 @@ func (c *Client) PerformRequest(method, path string, params url.Values, body int
 
 		// Tracing
 		c.dumpRequest((*http.Request)(req))
+
+		// Signer
+		if c.signer != nil {
+			c.signer((*http.Request)(req))
+		}
 
 		// Get response
 		res, err := c.c.Do((*http.Request)(req))
